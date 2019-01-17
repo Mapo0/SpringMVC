@@ -12,12 +12,12 @@ public class UserRepositoryImpl implements UserRepository {
     private List<User> userList= new ArrayList<>();
 
     public UserRepositoryImpl(){
-        User Admin = new User("admin", "admin");
-        Admin.setUserRole(UserRole.ADMIN);
-        userList.add(Admin);
-        User Client = new User("user","user");
-        Client.setUserRole(UserRole.CLIENT);
-        userList.add(Client);
+        User admin = new User("admin", "admin");
+        admin.setUserRole(UserRole.ADMIN);
+        userList.add(admin);
+        User client = new User("user","user");
+        client.setUserRole(UserRole.CLIENT);
+        userList.add(client);
     }
     @Override
     public User getUserByLogin(String login) {
