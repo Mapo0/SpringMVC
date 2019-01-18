@@ -17,6 +17,11 @@ public class ProductRepositoryImpl implements ProductRepository {
         productList.add(new Product("text3",2,3000));
         productList.add(new Product("text4",3,4000));
 
+        productList.add(new Product("text5",4,5000));
+        productList.add(new Product("text6",5,6000));
+        productList.add(new Product("text7",6,7000));
+        productList.add(new Product("text8",7,8000));
+
     }
     @Override
     public Product getProductById(int id) {

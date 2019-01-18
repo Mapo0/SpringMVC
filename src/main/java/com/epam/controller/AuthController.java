@@ -1,7 +1,9 @@
 package com.epam.controller;
 
 
+import com.epam.repository.ProductRepository;
 import com.epam.repository.impl.ProductRepositoryImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +15,8 @@ import java.util.Map;
 
 @Controller
 public class AuthController {
-
+    @Autowired
+    private ProductRepository productRepository;
 //    @RequestMapping("/index")
 //    public String welcome() {
 //        return "index";
@@ -25,13 +28,12 @@ public class AuthController {
 //        return modelAndView;
 //    }
 
-
-//
-//@GetMapping("/index")
-//public String showOrders(Model model) {
-//    model.addAttribute("orders", getAllOrders());
-//    return "index";
-//
-//}
+    @RequestMapping("/index")
+    public String welcome(Model model){
+        model.addAttribute("product", productRepository.getProductList());
+//        model.addAttribute("name", productRepository.getProductByName());
+//        model.addAttribute("id", productRepository.getProductById());
+        return "index";
+    }
 
 }
