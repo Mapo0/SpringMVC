@@ -26,12 +26,23 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
     @Override
     public Product getProductById(int id) {
-        return null;
+
+        return productList.stream()
+                .filter(product -> product.getId() == id)
+                .findFirst()
+                .orElseThrow(NullPointerException::new);
+    }
+
+    @Override
+    public Product getByCost(int cost) { return null;
     }
 
     @Override
     public Product getProductByName(String name) {
-        return null;
+        return productList.stream()
+                .filter(product -> product.getName()== name)
+                .findFirst()
+                .orElseThrow(NullPointerException::new);
     }
 
     @Override

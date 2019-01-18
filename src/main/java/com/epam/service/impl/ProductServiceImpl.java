@@ -2,9 +2,10 @@ package com.epam.service.impl;
 
 import com.epam.dto.Product;
 import com.epam.service.ProductService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getProductRepository(String name) {

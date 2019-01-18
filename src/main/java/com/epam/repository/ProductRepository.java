@@ -8,6 +8,8 @@ public interface ProductRepository {
 
     Product getProductById (int id);
 
+    Product getByCost(int cost);
+
     Product getProductByName (String name);
 
     List<Product> getProductList();

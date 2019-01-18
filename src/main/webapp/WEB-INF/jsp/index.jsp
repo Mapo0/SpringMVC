@@ -51,27 +51,16 @@
         <H1 class="head">Одежда:</H1>
     </div>
             <div class="menu" >
-                <table style=" border-style: solid; border-width:1px; width: 600px; border-collapse: collapse;">
-                <thead>
-                <tr style="background-color: gray;">
-                <td style="width: 30px;">id</td>
-                <td style="width: 80px;">name</td>
-                <td style="width: 80px;">role</td>
-                <td></td>
-                <td style="width: 80px;">action</td>
-                <td style="width: 80px;">action</td>
-                </tr>
-                </thead>
-                <c:forEach var="product" items="${product}">
-                	<tr>
-                		<td>${user.id}</td>
-                		<td><c:out value="${product.name}" /></td>
-                		<td></td>
-                		<td><c:out value="${product.cost}" /></td>
+           <c:forEach var="product" items="${product}">
 
-                	</tr>
-                </c:forEach>
-                </table>
+                               <c:forEach var="product" items="${product.getProductList()}">
+                                   <div class="product" id="${product.getProductById()}">
+                                       <div class="name">${product.getProductByName()}</div>
+                                       <div class="cost">${product.getByCost()}</div>
+                                   </div>
+                               </c:forEach>
+                           </div>
+                       </c:forEach>
 
 </div>
     <div class="sticky">
