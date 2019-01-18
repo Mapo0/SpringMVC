@@ -4,13 +4,16 @@ package com.epam.controller;
 import com.epam.dto.User;
 import com.epam.manager.SessionUserManager;
 import com.epam.repository.ProductRepository;
+import com.epam.repository.UserRepository;
 import com.epam.repository.impl.ProductRepositoryImpl;
+import com.epam.repository.impl.UserRepositoryImpl;
 import com.epam.service.UserService;
 import com.epam.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,6 +31,19 @@ public class AuthController {
         modelAndView.setViewName("login");
         return modelAndView;
     }
+
+    @PostMapping("login")
+    public ModelAndView login(User user, ModelAndView modelAndView) {
+        User foundUser = UserService;
+
+        if (foundUser == null) {
+            modelAndView.setViewName("welcome");
+            return modelAndView;
+        }
+        sessionUserManager.setCurrentSessionUser(foundUser);
+        return new ModelAndView("redirect:","user", foundUser);
+    }
+
 
 
 }

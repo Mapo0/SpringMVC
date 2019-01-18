@@ -1,6 +1,8 @@
 package com.epam.dto;
 
-public class User {
+import java.util.List;
+
+public class User{
     private String login;
     private String password;
     private UserRole userRole;

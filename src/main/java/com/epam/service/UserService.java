@@ -2,10 +2,12 @@ package com.epam.service;
 
 
 import com.epam.dto.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 public interface UserService {
 
-    public List<User> getUserRepository(String login);
+  public   User getUserRepository(User user);
 }
