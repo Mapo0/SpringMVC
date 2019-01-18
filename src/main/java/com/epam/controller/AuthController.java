@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AuthController {
     @Autowired
-    UserServiceImpl service;
+    UserServiceImpl userService;
     @Autowired
     SessionUserManager sessionUserManager;
 
@@ -34,10 +34,11 @@ public class AuthController {
 
     @PostMapping("login")
     public ModelAndView login(User user, ModelAndView modelAndView) {
-        User foundUser = UserService;
+        User foundUser = userService.getUserRepository(user.getLogin());
+      
 
         if (foundUser == null) {
-            modelAndView.setViewName("welcome");
+            modelAndView.setViewName("index");
             return modelAndView;
         }
         sessionUserManager.setCurrentSessionUser(foundUser);
