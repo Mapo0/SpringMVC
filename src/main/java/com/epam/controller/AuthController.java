@@ -40,12 +40,13 @@ public class AuthController {
         User foundUser = userService.getUserRepository(user);
 
         if (foundUser == null) {
-            modelAndView.setViewName("index");
+            modelAndView.setViewName("error");
             return modelAndView;
         }
 
         sessionUserManager.setCurrentSessionUser(foundUser);
-        return new ModelAndView("redirect:","user", foundUser);
+        modelAndView.setViewName("index");
+        return modelAndView;
     }
 
     @GetMapping("reg")

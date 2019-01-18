@@ -19,12 +19,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUserRepository(User user) {
         User foundUser= userRepository.getUserByLogin(user.getLogin());
-        if (!foundUser.getPassword().equals(user.getPassword()))
+        if (foundUser.getPassword().equals(user.getPassword()))
         {
-            return null;
+            return foundUser;
         }
-        else
-        return foundUser;
+        return null;
     }
 
     @Override
