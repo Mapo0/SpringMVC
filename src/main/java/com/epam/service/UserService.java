@@ -10,4 +10,6 @@ import java.util.List;
 public interface UserService {
 
   public   User getUserRepository(User user);
+
+  void addUser(User user);
 }

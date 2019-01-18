@@ -20,10 +20,12 @@ public class UserRepositoryImpl implements UserRepository {
         client.setUserRole(UserRole.CLIENT);
         userList.add(client);
     }
+
     @Override
-    public User getUserByLogin(String login) {
-        return null;
+    public User getUserByLogin(String login){
+        return userList.stream().filter(u -> u.getLogin().equals(login)).findFirst().get();
     }
+
 
     @Override
     public void addUser(User user) {
