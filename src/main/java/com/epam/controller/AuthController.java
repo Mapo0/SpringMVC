@@ -1,6 +1,7 @@
 package com.epam.controller;
 
 
+import ch.qos.logback.core.net.server.Client;
 import com.epam.dto.User;
 import com.epam.dto.UserRole;
 import com.epam.manager.SessionUserManager;
@@ -45,7 +46,10 @@ public class AuthController {
         }
 
         sessionUserManager.setCurrentSessionUser(foundUser);
+        if(foundUser.getUserRole().equals(UserRole.CLIENT))
         modelAndView.setViewName("index");
+        else
+        modelAndView.setViewName("reg");
         return modelAndView;
     }
 
