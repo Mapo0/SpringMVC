@@ -51,62 +51,27 @@
         <H1 class="head">Одежда:</H1>
     </div>
             <div class="menu" >
-                <div class="clother" >
-                    <div class="img" >
-                            <img
-                            src="https://eaglexshirt.com/wp-content/uploads/2018/01/Deadpool-Gucci-Hoodie.jpg" alt="">
-                    </div>
-                    <div class="text">text1</div>
-                    <div class="bar" style="display: none;">
-                        <div class="cost" style="display: inline; margin: 0">10000
+                <table style=" border-style: solid; border-width:1px; width: 600px; border-collapse: collapse;">
+                <thead>
+                <tr style="background-color: gray;">
+                <td style="width: 30px;">id</td>
+                <td style="width: 80px;">name</td>
+                <td style="width: 80px;">role</td>
+                <td></td>
+                <td style="width: 80px;">action</td>
+                <td style="width: 80px;">action</td>
+                </tr>
+                </thead>
+                <c:forEach var="product" items="${product}">
+                	<tr>
+                		<td>${user.id}</td>
+                		<td><c:out value="${product.name}" /></td>
+                		<td></td>
+                		<td><c:out value="${product.cost}" /></td>
 
-                        </div>
-                        <span>Rub</span>
-                        <button type="button" class="add" >В корзину</button>
-                    </div>
-                </div>
-                <div class="clother">
-                    <div class="img">
-                            <img
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlRAVAMjfeuR_Ui_ZN9nsj5YNLJEH6Q4Mm_jcB7CXaeZnJXxchXA" alt="">
-                    </div>
-                    <div class="text">text2</div>
-                    <div class="bar" style="display: none;">
-                        <div class="cost" style="display: inline; margin: 0">20000
-
-                        </div>
-                        <span>Rub</span>
-                        <button type="button" class="add">В корзину</button>
-                    </div>
-                </div>
-                <div class="clother">
-                    <div class="img">
-                            <img
-                            src="https://images-na.ssl-images-amazon.com/images/I/61%2BEgaUSeSL._SX385_.jpg" alt="">
-                    </div>
-                    <div class="text">tex3t</div>
-                    <div class="bar" style="display: none;">
-                        <div class="cost" style="display: inline; margin: 0">100000
-
-                        </div>
-                        <span>Rub</span>
-                        <button type="button" class="add">В корзину</button>
-                    </div>
-                </div>
-                <div class="clother">
-                    <div class="img">
-                            <img
-                            src="https://images-na.ssl-images-amazon.com/images/I/61%2BEgaUSeSL._SX385_.jpg" alt="">
-                    </div>
-                    <div class="text">text4</div>
-                    <div class="bar" style="display: none;">
-                        <div class="cost" style="display: inline; margin: 0">10002
-
-                        </div>
-                        <span>Rub</span>
-                        <button type="button" class="add">В корзину</button>
-                    </div>
-                </div>
+                	</tr>
+                </c:forEach>
+                </table>
 
 </div>
     <div class="sticky">

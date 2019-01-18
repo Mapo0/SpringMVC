@@ -2,11 +2,12 @@ package com.epam.repository.impl;
 
 import com.epam.dto.Product;
 import com.epam.repository.ProductRepository;
+import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class ProductRepositoryImpl implements ProductRepository {
 
     private List<Product> productList=new ArrayList<>();
