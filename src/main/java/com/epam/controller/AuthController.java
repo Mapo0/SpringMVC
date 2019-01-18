@@ -36,21 +36,19 @@ public class AuthController {
         return modelAndView;
     }
 
-    @PostMapping("login")
-    public ModelAndView login(User user, ModelAndView modelAndView) {
+    @PostMapping("/login")
+    public String login (User user, ModelAndView modelAndView) {
         User foundUser = userService.getUserRepository(user);
 
         if (foundUser == null) {
-            modelAndView.setViewName("error");
-            return modelAndView;
+            return "error";
         }
 
         sessionUserManager.setCurrentSessionUser(foundUser);
         if(foundUser.getUserRole().equals(UserRole.CLIENT))
-        modelAndView.setViewName("index");
+        return "redirect:/index";
         else
-        modelAndView.setViewName("reg");
-        return modelAndView;
+        return "reg";
     }
 
     @GetMapping("reg")

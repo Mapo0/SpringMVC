@@ -52,13 +52,17 @@
     </div>
             <div class="menu" >
            <c:forEach var="product" items="${product}">
+<div class="img">
+                            <img
+                            src="https://media.gucci.com/style/DarkGray_South_0_160_316x316/1533573005/547834_0Y2BT_8163_001_092_0000_Light--Gucci.jpg" alt="">
+                    </div>
 
-                               <c:forEach var="product" items="${product.getProductList()}">
-                                   <div class="product" id="${product.getProductById()}">
-                                       <div class="name">${product.getProductByName()}</div>
-                                       <div class="cost">${product.getByCost()}</div>
+                                   <div class="product" id="${product.getId()}">
+
+                                       <div class="name">${product.getName()}</div>
+                                       <div class="cost">${product.getCost()}</div>
                                    </div>
-                               </c:forEach>
+
                            </div>
                        </c:forEach>
 

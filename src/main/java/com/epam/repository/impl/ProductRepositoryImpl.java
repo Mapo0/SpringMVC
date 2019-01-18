@@ -47,6 +47,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public List<Product> getProductList() {
-        return null;
+        return productList;
+
     }
 }

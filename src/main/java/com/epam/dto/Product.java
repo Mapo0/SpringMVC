@@ -5,6 +5,7 @@ public class Product {
     private int id;
     private int cost;
 
+
     public Product() {
     }
 
