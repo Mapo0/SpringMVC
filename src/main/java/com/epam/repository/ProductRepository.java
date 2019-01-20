@@ -12,5 +12,7 @@ public interface ProductRepository {
 
     Product getProductByName (String name);
 
+    void setProducts (List<Product> categories);
+
     List<Product> getProductList();
 }

@@ -9,6 +9,12 @@ public class Product {
     public Product() {
     }
 
+    public Product(String name, int id, int cost) {
+        this.name = name;
+        this.id = id;
+        this.cost = cost;
+    }
+
     public String getName() {
         return name;
     }
@@ -33,9 +39,5 @@ public class Product {
         this.cost = cost;
     }
 
-    public Product(String name, int id, int cost) {
-        this.name = name;
-        this.id = id;
-        this.cost = cost;
-    }
+
 }

@@ -47,26 +47,34 @@
                 </div>
                   </div>
 
+<c:forEach var="category" items="${category}">
     <div class="sticky">
-        <H1 class="head">Одежда:</H1>
+    <H1 class="head">${category.getName()}:</H1>
     </div>
-            <div class="menu" >
-           <c:forEach var="product" items="${product}">
-<div class="img">
-                            <img
-                            src="https://media.gucci.com/style/DarkGray_South_0_160_316x316/1533573005/547834_0Y2BT_8163_001_092_0000_Light--Gucci.jpg" alt="">
+        <div class="menu" >
+
+            <c:forEach var="product" items="${category.getCategory()}">
+                <div class="clother">
+                    <div class="img">
+                    <img
+                    src="https://media.gucci.com/style/DarkGray_South_0_160_316x316/1533573005/547834_0Y2BT_8163_001_092_0000_Light--Gucci.jpg" alt="">
                     </div>
 
-                                   <div class="product" id="${product.getId()}">
+                        <div class="product" id="${product.getId()}">
+                            <div class="text">${product.getName()}</div>
 
-                                       <div class="name">${product.getName()}</div>
-                                       <div class="cost">${product.getCost()}</div>
-                                   </div>
+                            <div class="bar" style="display: none;">
+                            <div class="cost"  style="display: inline; margin: 0">${product.getCost()}</div>
+                            <span>Rub</span>
+                            <button type="button" class="add">В корзину</button>
+                            </div>
+                    </div>
 
-                           </div>
-                       </c:forEach>
+                </div>
+            </c:forEach>
 
-</div>
+       </div>
+        </c:forEach>
     <div class="sticky">
       <h1 class="head">Аксессуары:</h1>
     </div>
