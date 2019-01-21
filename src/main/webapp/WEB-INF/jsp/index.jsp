@@ -22,8 +22,24 @@
                 </div>
 
                 <div class="overlay"></div>
-                    <div class="popup" id="popup1">Окно поиска
+                    <div class="popup" id="popup1" >Окно поиска
                         <div class="closepopup"></div>
+                         <form class="form-horizontal" id="search">
+                                    <div class="form-group form-group-lg">
+                                        <label class="col-sm-2 control-label">ProductName</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="categoryName"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" id="bth-search"
+                                                    class="btn btn-primary btn-lg">Search
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
                     </div>
                 <div class="overlay"></div>
                     <div class="popup" id="popup2">
