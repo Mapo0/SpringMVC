@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <input type="submit" value="Войти">
-            <div style="text-align: center">Регистрация</a></div>
+            <div style="text-align: center"><a href="reg">Регистрация</a></div>
 
 
         </tr>

@@ -38,8 +38,8 @@ public class Db {
 
         List<Category> categories = new ArrayList<>();
 
-        categories.add(new Category("clother",2,clotherList));
-        categories.add(new Category("access",1,accessList));
+        categories.add(new Category("Одежда",2,clotherList));
+        categories.add(new Category("Аксессуары",1,accessList));
 
         categoryRepository.setCategory(categories);
     }
