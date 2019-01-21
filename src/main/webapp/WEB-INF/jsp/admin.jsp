@@ -8,6 +8,6 @@
 <title>ADMIN</title>
 </head>
 <body>
-
+HELLO ADMIN
 </body>
 </html>
