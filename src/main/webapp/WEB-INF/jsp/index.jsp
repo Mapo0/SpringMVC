@@ -15,7 +15,10 @@
         <div class="header">
                 <div class ="header-left">
                     <a >${user}</a>
-                    <button style="margin-top: 15px"><a href="/login">Выйти</a></button>
+                    <button style="margin-top: 15px"><a href="/logout">Выйти</a></button>
+                     <c:if test="${user1 == 'ADMIN'}">
+                                      <li style="float:right"><div><a href="/admin">Кнопка для админа</a></div>
+                                         </c:if>
                 </div>
 
                 <div class="overlay"></div>

@@ -45,10 +45,9 @@ public class AuthController {
         }
 
         sessionUserManager.setCurrentSessionUser(foundUser);
-        if(foundUser.getUserRole().equals(UserRole.CLIENT))
+        foundUser.getUserRole().equals(UserRole.CLIENT);
         return "redirect:/index";
-        else
-        return "reg";
+
     }
 
     @GetMapping("reg")

@@ -25,6 +25,7 @@ public class MainController {
         model.addAttribute("category", categoryRepository.getCategory());
         User user= sessionUserManager.getCurrentSessionUser();
         model.addAttribute("user", user.getLogin());
+        model.addAttribute("user1",user.getUserRole());
         return "index";
     }
 }
