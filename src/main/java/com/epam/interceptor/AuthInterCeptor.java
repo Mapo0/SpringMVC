@@ -19,13 +19,13 @@ public class AuthInterCeptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        User user = sessionUserManagerImpl.getCurrentSessionUser();
-        if (Objects.isNull(user)) {
+        User foundUser = sessionUserManagerImpl.getCurrentSessionUser();
+        if (Objects.isNull(foundUser)) {
             httpServletResponse.sendRedirect("/login");
             return false;
         }
 
-        httpServletRequest.setAttribute("user", user);
+        httpServletRequest.setAttribute("user", foundUser);
         return true;
     }
 }
