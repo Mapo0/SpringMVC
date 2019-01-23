@@ -16,10 +16,10 @@ public interface ProductRepository {
 
     List<Product> getProductList();
 
-    Product createProduct (Product product);
+    void createProduct (Product product);
 
-    Product deleteProduct (int id);
+    void deleteProduct (int id);
 
-    Product update (Product product);
+    void update (Product product);
 
 }

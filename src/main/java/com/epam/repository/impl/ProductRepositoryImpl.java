@@ -4,7 +4,6 @@ import com.epam.dto.Product;
 import com.epam.repository.ProductRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 @Repository
@@ -44,18 +43,18 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public Product createProduct(Product product) {
-        return null;
+    public void createProduct(Product product) {
+        productList.add(product);
     }
 
     @Override
-    public Product deleteProduct(int id) {
-        return null;
+    public void deleteProduct(int id) {
+
     }
 
     @Override
-    public Product update(Product product) {
-        return null;
+    public void update(Product product) {
+        
     }
 
     public void setProducts(List<Product> products) {
