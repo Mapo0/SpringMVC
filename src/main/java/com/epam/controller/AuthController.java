@@ -50,20 +50,6 @@ public class AuthController {
 
     }
 
-    @GetMapping("reg")
-    public ModelAndView registration(ModelAndView modelAndView) {
-        modelAndView.setViewName("reg");
-        return modelAndView;
-    }
-    @PostMapping("reg")
-    public ModelAndView registration(ModelAndView modelAndView, @Validated User user) {
-        modelAndView.setViewName("reg");
-        user.setUserRole(UserRole.CLIENT);
-        userService.addUser(user);
-        sessionUserManager.setCurrentSessionUser(user);
-        return new ModelAndView("redirect:", "user", user);
-    }
-
     @GetMapping("logout")
     public ModelAndView logout(ModelAndView modelAndView, HttpServletRequest httpServletRequest) {
         httpServletRequest.getSession().invalidate();

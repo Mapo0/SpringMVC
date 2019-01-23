@@ -48,33 +48,5 @@ public class MainController {
         return "admin";
     }
 
-    @PostMapping("/api/search")
-    public ResponseEntity<?> getSearchResultViaAjax(
-            @Valid @RequestBody SearchCriteria search, Errors errors) {
-
-        AjaxResp result = new AjaxResp();
-
-        //If error, just return a 400 bad request, along with the error message
-        if (errors.hasErrors()) {
-
-            result.setMsg(errors.getAllErrors()
-                    .stream().map(x -> x.getDefaultMessage())
-                    .collect(Collectors.joining(",")));
-
-            return ResponseEntity.badRequest().body(result);
-
-        }
-
-        List<Category> categoryList = categoryService.getCategoryFindName(search.getCategoryName());
-        if (categoryList.isEmpty()) {
-            result.setMsg("no user found!");
-        } else {
-            result.setMsg("success");
-        }
-        result.setResult(categoryList);
-
-        return ResponseEntity.ok(result);
-
-    }
 
 }
