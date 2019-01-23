@@ -43,6 +43,21 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     }
 
+    @Override
+    public Product createProduct(Product product) {
+        return null;
+    }
+
+    @Override
+    public Product deleteProduct(int id) {
+        return null;
+    }
+
+    @Override
+    public Product update(Product product) {
+        return null;
+    }
+
     public void setProducts(List<Product> products) {
         productList.addAll(products);
     }

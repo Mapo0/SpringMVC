@@ -15,4 +15,11 @@ public interface ProductRepository {
     void setProducts (List<Product> categories);
 
     List<Product> getProductList();
+
+    Product createProduct (Product product);
+
+    Product deleteProduct (int id);
+
+    Product update (Product product);
+
 }
