@@ -30,8 +30,8 @@ public class MainController {
 
     @Autowired
     private SessionUserManager sessionUserManager;
-
-    CategoryService categoryService;
+    @Autowired
+    private CategoryService categoryService;
 
     @RequestMapping("/index")
     public String index(Model model){

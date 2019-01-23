@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 });
 
-function fire_ajax_submit() {
+function findProduct() {
 
     var search = {}
     search["categoryName"] = $("#categoryName").val();

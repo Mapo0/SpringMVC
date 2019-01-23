@@ -11,6 +11,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     private List<Product> productList ;
 
+    private Product product;
+
     public ProductRepositoryImpl() {
         this.productList = new ArrayList<>();
     }
@@ -44,12 +46,12 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public void createProduct(Product product) {
-        productList.add(product);
+       productList.add(product);
     }
 
     @Override
     public void deleteProduct(int id) {
-
+        productList.remove(getProductById(id));
     }
 
     @Override
