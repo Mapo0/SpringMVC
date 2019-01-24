@@ -9,5 +9,8 @@
 </head>
 <body>
 HELLO ADMIN
+<div>
+<button >Создать продукт</a></button>
+</div>
 </body>
 </html>

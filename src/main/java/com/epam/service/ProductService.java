@@ -19,4 +19,6 @@ public interface ProductService {
    void createProduct (Product product);
 
    void update (Product product);
+
+   int lastID(int id);
 }

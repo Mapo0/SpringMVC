@@ -6,14 +6,17 @@ import com.epam.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ProductServiceImpl implements ProductService {
+
+    private List<Product> productList = new ArrayList<>();
     @Autowired
     private ProductRepository productRepository;
     @Override
     public List<Product> getProductRepository(String name) {
-        return null;
+        return productRepository.getProductList();
     }
 
     @Override
@@ -44,5 +47,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void update(Product product) {
             productRepository.update(product);
+    }
+
+    @Override
+    public int lastID(int id) {
+        return productList.size() - 1;
     }
 }
